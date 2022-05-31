@@ -40,7 +40,7 @@ def img_proc(image):
     clahe = cv2.createCLAHE(clipLimit=3)
     final_img = clahe.apply(img)  # Adaptive Histogram Equalization
 
-    th = cv2.adaptiveThreshold(final_img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,15,2)
-    th=255 - th  ## inverting the image B2W for pattern algorithm
+    bin_Thr = cv2.adaptiveThreshold(final_img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,15,2)
+    bin_Thr=255 - bin_Thr  ## inverting the image B2W for pattern algorithm
 
-    return th
+    return bin_Thr
