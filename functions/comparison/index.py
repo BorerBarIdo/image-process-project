@@ -34,7 +34,7 @@ def compare_images(imageA, imageB):
 	plt.show()
 	
 def img_proc(image):
-    img = cv2.imread(image,0)  # read in grayscale
+    img = cv2.imread('image',0)  # read in grayscale
     img = cv2.medianBlur(image,3)  #median filtering
 
     clahe = cv2.createCLAHE(clipLimit=3)
