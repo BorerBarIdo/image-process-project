@@ -1,7 +1,7 @@
 import cv2 as cv
 import sys
 from PIL import Image
-from functions.comparison.index import compare_images, mse
+from functions.comparison.index import compare_images, mse, img_proc
 import numpy as np
 from matplotlib import pyplot as plt
 from skimage.metrics import structural_similarity as ssim
@@ -9,9 +9,9 @@ from skimage.metrics import structural_similarity as ssim
 xPortion = 1/5
 yPortion = 1/6
 
-img = cv.imread(cv.samples.findFile("_test/veins2.png"))
+imp_img = cv.imread(cv.samples.findFile("_test/veins2.png"))
 sample = cv.imread(cv.samples.findFile("assets/patterns/sample1.png"))
-
+img=img_proc(imp_img)
 yRef, xRef, c = img.shape
 sampleSize = (round(yPortion * yRef), round(xPortion * xRef))
 
