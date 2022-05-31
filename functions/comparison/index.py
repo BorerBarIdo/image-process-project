@@ -32,3 +32,15 @@ def compare_images(imageA, imageB):
 	plt.axis("off")
 	# show the images
 	plt.show()
+	
+def img_proc(image):
+    img = cv2.imread(image,0)  # read in grayscale
+    img = cv2.medianBlur(image,3)  #median filtering
+
+    clahe = cv2.createCLAHE(clipLimit=3)
+    final_img = clahe.apply(img)  # Adaptive Histogram Equalization
+
+    th = cv2.adaptiveThreshold(final_img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,15,2)
+    th=255 - th  ## inverting the image B2W for pattern algorithm
+
+    return th
