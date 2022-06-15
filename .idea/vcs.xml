@@ -4,7 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libs/opencv" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libs/opencv_contrib" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/opencv" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/opencv_contrib" vcs="Git" />
   </component>
 </project>
