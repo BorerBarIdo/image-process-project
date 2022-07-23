@@ -1,8 +1,8 @@
 import glob
 from PIL import Image
+import cv2 as cv2
 
-def bestCoordinate(path):
-    sampleList = []
-    for filename in glob.glob('assets/patterns/*.png'):
-        im = Image.open(filename)
-        sampleList.append(im)
+
+def fetchSampleImages():
+    images = [cv2.imread(file) for file in glob.glob("./assets/patterns/*.png")]
+    return images

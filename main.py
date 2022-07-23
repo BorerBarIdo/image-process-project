@@ -1,18 +1,9 @@
 import cv2 as cv2
 from services.videoProcessor import *
 from services.sampleImageProcessor import *
-from PIL import Image
-import numpy as np
-from matplotlib import pyplot as plt
-from skimage.metrics import structural_similarity as ssim
+from flask import Flask, render_template, Response
 
-# xPortion = 1/5
-# yPortion = 1/6
-# cv2.destroyAllWindows()
-
-# sample = cv.imread(cv.samples.findFile("assets/patterns/sample1.png"))
-img = cv2.imread(cv2.samples.findFile("_test/veins2.png"))
-sourceVid = cv2.VideoCapture("_test/vid_veins_leg1.mp4")
+sourceVid = cv2.VideoCapture("_test/modi_veins.mp4")
 
 
 videoProcessor(sourceVid)
@@ -49,25 +40,10 @@ videoProcessor(sourceVid)
 # # Display the original image with the rectangle around the match.
 # # cv.imshow('output',thresh1)
 
-# plt.imshow(thresh1)
-# plt.plot(MPx + sampleSize[1]/2, MPy + sampleSize[0]/2, "or", 8)
-# plt.show()
+# @app.route('/video_feed')
+# def video_feed():
+#     return Response(videoProcessor(), mimetype='multipart/x-mixed-replace; boundary=frame')
 #
-# cv.waitKey(0)
-
-# # The image is o
-# # H: {} = {"mseVal": 1, "x": 0, "y": 0}
-# # j: int = ySample
-# # i: int = xSample
-# # while j < yRef:
-# #     while i < xRef:
-# #         regionMse = mse(thresh1[(j-ySample):j, (i-xSample):i], thresh2)
-# #         if (H["mseVal"] > regionMse) or (H["mseVal"] == 1):
-# #             H["mseVal"] = regionMse
-# #             H["x"] = j-ySample/2
-# #             H["y"] = i-xSample/2
 #
-# #
-# # plt.imshow(thresh1)
-# # plt.plot(H["x"], H["y"], "og", 4)
-# plt.show()
+# if __name__ == '__main__':
+#     app.run()
