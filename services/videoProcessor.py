@@ -18,9 +18,9 @@ def videoProcessor(sourceVid):
         m_px, m_py = sampleImageProcessor(thresh1)
 
         indicate_img = indicator(img, m_px, m_px)
-        out.write(indicate_img)
+        # out.write(indicate_img)
 
-        cv2.imshow("Live", thresh1)
+        cv2.imshow("Live", indicate_img)
         key = cv2.waitKey(1)
         # encode_return_code, image_buffer = cv2.imencode('.jpg', indicate_img)
         # io_buf = io.BytesIO(image_buffer)

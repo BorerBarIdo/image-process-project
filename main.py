@@ -3,7 +3,7 @@ from services.videoProcessor import *
 from services.sampleImageProcessor import *
 from flask import Flask, render_template, Response
 
-sourceVid = cv2.VideoCapture("_test/modi_veins.mp4")
+sourceVid = cv2.VideoCapture("_test/veins_web_nir_2.mp4")
 
 
 videoProcessor(sourceVid)
